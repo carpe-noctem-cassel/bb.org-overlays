@@ -16,10 +16,10 @@
     fragment@0 {
         target = <&am33xx_pinmux>;
             __overlay__ {
-            pinctrl_spec: Panel_Pins {
+            pinctrl_ehrpwm1: BB-PWM1_Pins {
                     pinctrl-single,pins = <
-                        0x48 0x06 /* (U14) gpmc_a2.ehrpwm1A */
-                        0x4c 0x06 /* (T14) gpmc_a3.ehrpwm1B */
+                        0x48 0x26 /* (U14) gpmc_a2.ehrpwm1A */
+                        0x4c 0x26 /* (T14) gpmc_a3.ehrpwm1B */
                     >;
                 };
             };
@@ -28,10 +28,10 @@
 fragment@1 {
     target = <&ocp>;
         __overlay__ {
-        test_helper: helper {
+        ehrpwm1_helper: pwm1_helper {
             compatible = "bone-pinmux-helper";
             pinctrl-names = "default";
-            pinctrl-0 = <&pinctrl_spec>;
+            pinctrl-0 = <&pinctrl_ehrpwm1>;
             status = "okay";
         };
     };
